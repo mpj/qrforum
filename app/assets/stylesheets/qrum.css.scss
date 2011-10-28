@@ -2,7 +2,7 @@ html {
 	background-image: url('/assets/bg_noise.png');
 }
 
-#content { display: inline-block; width: 640px;}
+#content { display: inline-block; width: 100%;}
 
 html, body, div, p {
 	color: white;
@@ -44,8 +44,8 @@ input[type=button], input[type=submit], submit {
 	color: white;
 }
 
-.field textarea { width: 640px; height: 200px; }
-.field input { width: 640px; }
+.field textarea { width: 90%; height: 200px; }
+.field input { width: 90%; }
 
 .field.signature input {
 	
