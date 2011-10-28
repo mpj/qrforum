@@ -16,16 +16,17 @@
     </div>
   <% end %>
 
-  <div class="body field">
-    <%= f.text_area :body %>
+  <div class="fields">
+    <div class="body field">
+      <%= f.text_area :body %>
+    </div>
+    <div class="signature field">
+      <%= f.label :signature %>:
+      <%= f.text_field :signature %>
+    </div>
+    <%= image_submit_tag("button.png") %>
   </div>
-  <div class="signature field">
-    <%= f.label :signature %>:
-    <%= f.text_field :signature %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  
 <% end %>
 
 <p><h3 id="posts">Posts</h3>
