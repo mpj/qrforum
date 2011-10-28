@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  body: MyString
+  signature: MyString
+  wall_id: 1
+
+two:
+  body: MyString
+  signature: MyString
+  wall_id: 1
