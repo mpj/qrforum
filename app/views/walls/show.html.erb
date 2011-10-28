@@ -1,14 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <h1><%= @wall.title %></h1>
-<p><%= link_to "Print a QR code for this QRum", wall_qr_url %></p>
 
 <%= form_for(@post) do |f| %>
   <input type="hidden" name="post[wall_id]" value="<%= @wall.id %>" />
   <% if @post.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
+      <h2><%= pluralize(@post.errors.count, "error") %> 
+      prohibited this post from being saved:</h2>
       <ul>
       <% @post.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -18,8 +17,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :body %><br />
-    <%= f.text_field :body %>
+    <%= f.text_area :body %>
   </div>
   <div class="field">
     <%= f.label :signature %><br />
@@ -36,6 +34,3 @@
 	<p><b><%= post.signature %></b></p>
 <% end %>
 <p>
-
-<%= link_to 'Edit', edit_wall_path(@wall.code) %> |
-<%= link_to 'Back', walls_path %>
