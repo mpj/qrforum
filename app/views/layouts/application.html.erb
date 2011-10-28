@@ -2,13 +2,17 @@
 <html>
 <head>
   <title>Qrforum</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag "application" %>
+  <link href='http://fonts.googleapis.com/css?family=Abel|Contrail+One|Reenie+Beanie' rel='stylesheet' type='text/css' />
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<div id="content">
+	<%= yield %>
+</div>
 
+<%= javascript_include_tag "application" %>
+<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1><%= @wall.title %></h1>
+<h1 class="formheader"><%= @wall.title %></h1>
 
 <%= form_for(@post) do |f| %>
   <input type="hidden" name="post[wall_id]" value="<%= @wall.id %>" />
@@ -16,11 +16,11 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="body field">
     <%= f.text_area :body %>
   </div>
-  <div class="field">
-    <%= f.label :signature %><br />
+  <div class="signature field">
+    <%= f.label :signature %>:
     <%= f.text_field :signature %>
   </div>
   <div class="actions">
@@ -29,8 +29,8 @@
 <% end %>
 
 <p><h3 id="posts">Posts</h3>
-<% @latest_posts.each do |post| %>
-	<p><%= post.body %></p>
-	<p><b><%= post.signature %></b></p>
-<% end %>
+  <% @latest_posts.each do |post| %>
+  	<p><%= post.body %></p>
+  	<p><b><%= post.signature %></b></p>
+  <% end %>
 <p>
