@@ -1,7 +1,8 @@
 ---
-bg_noise.png: bg_noise-988527f72bc86e97022feb8ac90a8846.png
+bg_noise.png: bg_noise-90fd09992a9038272ca2b15e97afb289.png
 rails.png: rails-e4b51606cd77fda2615e7439907bfc92.png
+semi_transparent_white.png: semi_transparent_white-d538cc1dc4aca7ccc6c450b580d49359.png
 jquery-ui.min.js: jquery-ui.min-2b432ef5545e6620f94e7638b7574058.js
 jquery.min.js: jquery.min-ac6382033c1c5e27ebbc5a5a0597ccb9.js
 application.js: application-515a482bdb7ca5ec9ac39513ad765f29.js
-application.css: application-eb645f68fe8e407630f4988f8ac73b65.css
+application.css: application-a7b820f97e6fe147587804c454cbf171.css
