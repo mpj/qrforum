@@ -12,10 +12,10 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <%= f.label 'Topic' %><br />
+    <%= f.text_field :title, :value => 'What do you think of this toilet?' %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Create your qrum' %>
   </div>
 <% end %>

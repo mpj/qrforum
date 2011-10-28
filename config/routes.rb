@@ -4,6 +4,7 @@ Qrforum::Application.routes.draw do
   resources :walls
 
   match '/w/:code' => 'walls#show_by_code', :as => :show_by_code
+  match '/qr/:code' => 'walls#qr_code', :as => :wall_qr
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

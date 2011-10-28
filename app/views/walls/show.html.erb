@@ -1,19 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @wall.title %>
-</p>
-
-<p>
-  <b>Code:</b>
-  <%= @wall.code %>
-</p>
-
-<p>
-  <b><img src="http://chart.apis.google.com/chart?cht=qr&amp;chs=300x300&amp;choe=UTF-8&amp;chld=H%7C0&amp;chl=<%= CGI::escape(show_by_code_url(@wall.code)) %>" /></b>
-</p>
-
+<h1><%= @wall.title %></h1>
+<p><%= link_to "Print a QR code for this QRum", wall_qr_url %></p>
 
 <%= form_for(@post) do |f| %>
   <input type="hidden" name="post[wall_id]" value="<%= @wall.id %>" />

@@ -23,6 +23,10 @@ class WallsController < ApplicationController
     end
   end
 
+  def qr_code
+    @wall = Wall.find_by_code params[:code]
+  end
+
   # GET /walls/new
   # GET /walls/new.json
   def new
@@ -47,7 +51,7 @@ class WallsController < ApplicationController
 
     respond_to do |format|
       if @wall.save
-        format.html { redirect_to show_by_code_url(@wall.code), notice: 'Wall was successfully created.' }
+        format.html { redirect_to wall_qr_url(@wall.code), notice: 'Wall was successfully created.' }
         format.json { render json: @wall, status: :created, location: @wall }
       else
         format.html { render action: "new" }
