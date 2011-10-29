@@ -27,12 +27,6 @@ class WallsController < ApplicationController
 
   def qr_code
     @wall = Wall.find_by_code params[:code]
-    require "prawn"
-
-    Prawn::Document.generate("hello.pdf") do
-      text "Hello World!"
-    end
-end
   end
 
   # GET /walls/new
@@ -59,7 +53,7 @@ end
 
     respond_to do |format|
       if @wall.save
-        format.html { redirect_to wall_qr_url(@wall.code), notice: 'Wall was successfully created.' }
+        format.html { redirect_to wall_qr_url(@wall.code, :format => :pdf), notice: 'Wall was successfully created.' }
         format.json { render json: @wall, status: :created, location: @wall }
       else
         format.html { render action: "new" }

@@ -64,6 +64,9 @@ GEM
     prawn (0.12.0)
       pdf-reader (>= 0.9.0)
       ttfunk (~> 1.0.2)
+    prawn_rails (0.0.7)
+      prawn (>= 0.11.1)
+      rails (>= 3.0.0)
     rack (1.3.5)
     rack-cache (1.0.3)
       rack (>= 0.4)
@@ -124,6 +127,7 @@ DEPENDENCIES
   jquery-rails
   pg
   prawn
+  prawn_rails
   rails (= 3.1.0)
   sass-rails (~> 3.1.0)
   sqlite3
