@@ -6,6 +6,19 @@
   <link href='http://fonts.googleapis.com/css?family=Abel|Contrail+One|Reenie+Beanie' rel='stylesheet' type='text/css' />
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=320, initial-scale=1, user-scalable=yes" />
+  <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-125505-24']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
 </head>
 <body>
 
@@ -15,5 +28,6 @@
 
 <%= javascript_include_tag "application" %>
 <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+
 </body>
 </html>
