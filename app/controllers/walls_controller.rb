@@ -1,3 +1,5 @@
+require 'prawn'
+
 class WallsController < ApplicationController
   # GET /walls
   # GET /walls.json
@@ -25,6 +27,12 @@ class WallsController < ApplicationController
 
   def qr_code
     @wall = Wall.find_by_code params[:code]
+    require "prawn"
+
+    Prawn::Document.generate("hello.pdf") do
+      text "Hello World!"
+    end
+end
   end
 
   # GET /walls/new

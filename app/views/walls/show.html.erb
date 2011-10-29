@@ -25,7 +25,7 @@
       </div>
       <div class="signature field">
         <%= f.label :signature %>:
-        <%= f.text_field :signature %>
+        <%= f.text_field :signature, :maxlength => 20 %>
       </div>
       <%= image_submit_tag("button.png") %>
     </div>
