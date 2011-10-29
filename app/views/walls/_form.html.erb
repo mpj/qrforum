@@ -11,11 +11,10 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label 'Topic' %><br />
-    <%= f.text_field :title, :value => 'What do you think of this toilet?', :class => 'main_topic_field' %>
+  <div class="field title">
+    <%= f.text_area :title, :value => 'What do you think of this toilet?', :class => 'main_topic_field' %>
   </div>
   <div class="actions">
-    <%= f.submit 'Create your qrum' %>
+    <%= image_submit_tag("start_button.png", :id => 'start_button') %>
   </div>
 <% end %>

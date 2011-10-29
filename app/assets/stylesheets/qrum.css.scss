@@ -12,7 +12,29 @@ html {
 	background-image: url('/assets/bg_noise.png');
 }
 
-#content { display: inline-block; width: 100%; }
+#logo { position: absolute; left: 145px; top: -220px }
+
+#content { display: inline-block; width: 100%; text-align: center }
+
+#qr_bg { position: absolute; left: -121px; top: -214px; }
+#big_box {
+	display: inline-block;
+	position: relative;
+	top: 250px;
+	width: 718px;
+	background-image: url('/assets/big_box_middle.png');
+	height: 100%;
+	text-align:center;
+}
+#big_box_top_img { position: absolute; top: -40px; left: 0; }
+
+#big_box p { width: 400px; margin-bottom: 20px; 
+			 text-align: left; display: inline-block;}
+
+#big_box .field.title textarea { 
+	padding: 5px; width: 400px; height: 80px;
+	margin-bottom: 15px; 
+	display: inline-block; }
 
 html, body, div, p {
 	color: white;
@@ -46,9 +68,12 @@ input[type=text] {
 	font-size: 20px;
 }
 
-input[type=button], input[type=submit], input[type=image], submit {
-	font-size: 20px;
+#post_submit{
 	width: 100%;
+}
+
+#start_button {
+	margin-bottom: 25px;
 }
 
 .main_topic_field {

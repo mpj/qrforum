@@ -9,3 +9,5 @@ $("#mainform form").submit(function(event) {
 		alert("You must enter a signature.")
 	}
 });
+
+$(".field.title textarea").select().focus();
