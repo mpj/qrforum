@@ -1,9 +1,12 @@
 ---
 bg_noise.png: bg_noise-90fd09992a9038272ca2b15e97afb289.png
+box_bottom.png: box_bottom-cd1cf5d7a3c8d884e04a201dc15669f2.png
+box_middle.png: box_middle-acde210069527e5d3c53c53476507022.png
+box_top.png: box_top-e082e28620defd64da6186068fe2d399.png
 button.png: button-952c093f668ca9fad893edd58260cdbe.png
 rails.png: rails-e4b51606cd77fda2615e7439907bfc92.png
 semi_transparent_white.png: semi_transparent_white-d538cc1dc4aca7ccc6c450b580d49359.png
 jquery-ui.min.js: jquery-ui.min-2b432ef5545e6620f94e7638b7574058.js
 jquery.min.js: jquery.min-ac6382033c1c5e27ebbc5a5a0597ccb9.js
-application.js: application-515a482bdb7ca5ec9ac39513ad765f29.js
-application.css: application-a021d4cfa955f4f312f4709a680dd3b1.css
+application.js: application-1f6c9ed4f2737a8f36a6448e4710e1cd.js
+application.css: application-6257b10f52be490330038f23253d82bc.css
