@@ -1,15 +1,4 @@
-$("form.new_post").submit(function(event) {
-	var body = $(".field.body textarea").val();
-	var sig = $(".field.signature input").val();
-	if (body.trim().length == 0) {
-		event.preventDefault();
-		alert("You must enter message body.")
-	} else if (sig.trim().length == 0) {
-		event.preventDefault();
-		alert("You must enter a signature.")
-	}
-	setCookie('qrum_signature', sig, 120);
-});
+
 
 $(".field.title textarea").select().focus();
 
@@ -25,6 +14,19 @@ $(document).ready(function() {
 		$("#bookmark_bar #arrow").addClass('ios');
 
 	$(".field.signature input").val(getCookie('qrum_signature'));
+
+	$("form.new_post").submit(function(event) {
+		var body = $(".field.body textarea").val();
+		var sig = $(".field.signature input").val();
+		if (body.trim().length == 0) {
+			event.preventDefault();
+			alert("You must enter message body.")
+		} else if (sig.trim().length == 0) {
+			event.preventDefault();
+			alert("You must enter a signature.")
+		}
+		setCookie('qrum_signature', sig, 120);
+	});
 });
 
 
