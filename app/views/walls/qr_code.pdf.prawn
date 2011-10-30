@@ -14,7 +14,7 @@ prawn_document(:page_layout => :portrait, :margin => 0) do |pdf|
   arimo_regular_path = Rails.root.join('app', 'assets', 'fonts', 'Arimo-Regular.ttf')
   arimo_bold_path = Rails.root.join('app', 'assets', 'fonts', 'Arimo-Bold.ttf')
 
-  pdf.bounding_box [margin, 740], :width => a4width-(margin*2) do |b|
+  pdf.bounding_box [margin, 650], :width => a4width-(margin*2) do |b|
     pdf.font(contrail_path) do
       pdf.font_size 40
       pdf.text @wall.title, :align => :center
