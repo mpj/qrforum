@@ -13,7 +13,15 @@ class WallsController < ApplicationController
   end
 
   def show_by_code
+    
     @wall = Wall.find_by_code(params[:code])
+    if @wall.views
+      @wall.views = @wall.views + 1
+    else
+      @wall.views = 1
+    end
+    @wall.save
+
     @latest_posts = Post.where(:wall_id => @wall.id)
     @post = Post.new(:wall_id => @wall.id)
     @post.wall = @wall

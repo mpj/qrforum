@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111030174400) do
+ActiveRecord::Schema.define(:version => 20111030220646) do
 
   create_table "posts", :force => true do |t|
     t.string   "body"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20111030174400) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "private_code"
+    t.integer  "views"
   end
 
 end
