@@ -49,7 +49,7 @@ class SubscriptionsController < ApplicationController
       if @subscription.save
 
         confirm_url = confirm_subscription_url(:id => @subscription.id, :secret => @subscription.secret)
-        Pony.mail(:from => "noreply@qrum.se",
+        Pony.mail(:from => "QRum Robot <robot@qrum.se>",
                   :to => @subscription.email,
                   :subject =>  "Confirm subscription: " + @subscription.wall.title,
                   :html_body => "<span style=\"font-family: sans-serif\"><h1>One step left!</h1>

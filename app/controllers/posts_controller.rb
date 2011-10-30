@@ -49,7 +49,7 @@ class PostsController < ApplicationController
         @post.wall.subscriptions.each do |sub|
           if sub.confirmed
             unsuburl = unsubscribe_url(sub.id, sub.secret)
-            Pony.mail(:from => "noreply@qrum.se",
+            Pony.mail(:from => "QRum Robot <noreply@qrum.se>",
                   :to => sub.email,
                   :subject =>  "New comment on " + wall.title,
                   :html_body => "<span style=\"font-family: sans-serif\">
