@@ -45,7 +45,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        wall = Wall.find params[:wall_id]
+        wall = Wall.find params[:post][:wall_id]
         @post.wall.subscriptions.each do |sub|
           if sub.confirmed
             unsuburl = unsubscribe_url(sub.id, sub.secret)
