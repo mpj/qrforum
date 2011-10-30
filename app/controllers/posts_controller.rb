@@ -44,7 +44,8 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to show_by_code_url(@post.wall.code), notice: 'Post was successfully created.' }
+        format.html { redirect_to show_by_code_url(@post.wall.code), 
+                      notice: 'Your comment has been posted to the wall!' }
         format.json { render json: @post, status: :created, location: @post }
       else
         format.html { render action: "new" }

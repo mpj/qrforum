@@ -1,6 +1,8 @@
 <% content_for :title, @wall.title %>
 
-<p id="notice"><%= notice %></p>
+<% if notice %>
+  <p id="notice"><%= notice %></p>
+<% end %>
 
 <div id="mainform">
   <%= image_tag("box_top.png", :style => 'position: relative; left: -1px;width:100%') %>
