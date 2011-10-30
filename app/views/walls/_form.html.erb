@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field title">
-    <%= f.text_area :title, :value => 'What do you think of this toilet?', :class => 'main_topic_field' %>
+    <%= f.text_area :title, :value => 'What do you think of this toilet?', :class => 'main_topic_field', :maxlength => 75 %>
   </div>
   <div class="actions">
     <%= image_submit_tag("start_button.png", :id => 'start_button') %>
