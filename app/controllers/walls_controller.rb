@@ -15,7 +15,7 @@ class WallsController < ApplicationController
 
   def show_by_code
     @wall = Wall.find_by_code(params[:code])
-    @latest_posts = Post.where(:wall_id => @wall.id).last(25).reverse
+    @latest_posts = Post.where(:wall_id => @wall.id)
     @post = Post.new(:wall_id => @wall.id)
     @post.wall = @wall
 

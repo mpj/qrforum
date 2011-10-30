@@ -7,7 +7,26 @@
   
   <h1 class="formheader"><%= @wall.title %></h1>
 
-  <%= form_for(@post) do |f| %>
+  <%= image_tag("box_bottom.png", 
+    :style => 'position: relative; left: -1px; top: 5px') %>
+</div>
+
+<div id="posts">
+  <%= image_tag("box_top.png", :style => 'position: relative; left: -1px;width:100%') %>
+  <div id="posts_content">
+    <% @latest_posts.each do |post| %>
+    	<p class="signature"><%= post.signature %>:</p>
+      <p class="body"><%= post.body %></p>
+      <p class="time"><%= time_ago_in_words(post.created_at) %> ago</p>
+      <hr />
+    <% end %>
+    <% if @latest_posts.length == 0 %>
+    Nobody has written anything yet. Yay! You'll be the first one to write something!
+    <% end %>
+
+  </div>
+
+    <%= form_for(@post) do |f| %>
     <input type="hidden" name="post[wall_id]" value="<%= @wall.id %>" />
     <% if @post.errors.any? %>
       <div id="error_explanation">
@@ -32,25 +51,6 @@
       <%= image_submit_tag("button.png", :id => 'post_submit') %>
     </div>
   <% end %>
-
-  <%= image_tag("box_bottom.png", 
-    :style => 'position: relative; left: -1px; top: 5px') %>
-</div>
-
-<div id="posts">
-  <%= image_tag("box_top.png", :style => 'position: relative; left: -1px;width:100%') %>
-  <div id="posts_content">
-    <% @latest_posts.each do |post| %>
-    	<p class="signature"><%= post.signature %>:</p>
-      <p class="body"><%= post.body %></p>
-      <p class="time"><%= time_ago_in_words(post.created_at) %> ago</p>
-      <hr />
-    <% end %>
-    <% if @latest_posts.length == 0 %>
-    Nobody has written anything yet. Yay! You'll be the first one to write something!
-    <% end %>
-
-  </div>
 
   <%= image_tag("box_bottom.png", 
     :style => 'position: relative; left: -1px; top: 5px') %>
