@@ -16,7 +16,7 @@ class PostsController < ApplicationController
                   :to => sub.email,
                   :subject =>  "New comment on " + wall.title,
                   :html_body => "<span style=\"font-family: sans-serif\">
-                  New comment on <a href=\"#{show_by_code_url(@wall.code)}\">#{wall.title}</a><br/>
+                  New comment on <a href=\"#{show_by_code_url(wall.code)}\">#{wall.title}</a><br/>
                   <hr /><br />
                   #{@post.body}
                   <br /><br />
