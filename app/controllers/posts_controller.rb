@@ -51,14 +51,14 @@ class PostsController < ApplicationController
             unsuburl = unsubscribe_url(sub.id, sub.secret)
             Pony.mail(:from => "noreply@qrum.se",
                   :to => sub.email,
-                  :subject =>  "New comment: " + wall.title,
+                  :subject =>  "New comment on " + wall.title,
                   :html_body => "<span style=\"font-family: sans-serif\">
-                  New comment on QRum: 
-                  <a href=\"#{wall_url(wall)}\">#{wall.title}</a>:<br /><br />
+                  New comment on <a href=\"#{wall_url(wall)}\">#{wall.title}</a><br/>
+                  <hr /><br />
                   #{@post.body}
                   <br /><br />
                   - #{@post.signature}
-                  <br /><br />
+                  <hr /><br />
                   <a href=\"#{unsuburl}\">Stop emailing me about this!</a>
                   </span>
                   ")
