@@ -54,7 +54,7 @@ class PostsController < ApplicationController
                   :subject =>  "New comment: " + wall.title,
                   :html_body => "<span style=\"font-family: sans-serif\">
                   New comment on QRum: 
-                  <a href=\"#{wall_url(@wall)}\">#{@post.wall.title}</a>:<br /><br />
+                  <a href=\"#{wall_url(wall)}\">#{wall.title}</a>:<br /><br />
                   #{@post.body}
                   <br /><br />
                   - #{@post.signature}
