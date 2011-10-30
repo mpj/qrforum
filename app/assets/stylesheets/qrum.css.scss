@@ -27,7 +27,7 @@ html {
 }
 #big_box_top_img { position: absolute; top: -40px; left: 0; }
 
-#big_box p { width: 400px; margin-bottom: 20px; 
+#big_box p { width: 400px; margin-bottom: 0px; 
 			 text-align: left; display: inline-block;}
 
 #big_box .field.title textarea { 
@@ -41,7 +41,7 @@ html, body, div, p {
 }
 
 #mainform {
-	margin-top: 15px;
+	margin-top: 10px;
 	background-image: url('/assets/box_middle.png');
 	background-repeat: repeat-y;
 	background-position: -1px;
@@ -56,7 +56,6 @@ h1 {
 }
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Contrail One', cursive;
-	margin-bottom: 10px;
 }
 h1 { font-size: 30px}
 
@@ -111,7 +110,7 @@ input[type=text] {
 }
 
 #posts {
-	margin-top: 20px;
+	margin-top: 10px;
 	background-image: url('/assets/box_middle.png');
 	background-repeat: repeat-y;
 	background-position: -1px;
