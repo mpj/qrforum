@@ -42,8 +42,28 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(params[:post])
 
+
     respond_to do |format|
       if @post.save
+        @post.wall.subscriptions.each do |sub|
+          if sub.confirmed
+            unsuburl = unsubscribe_url(sub.id, sub.secret)
+            Pony.mail(:from => "noreply@qrum.se",
+                  :to => sub.email,
+                  :subject =>  "New comment: " + @subscription.wall.title,
+                  :html_body => "<span style=\"font-family: sans-serif\">
+                  New comment on QRum: 
+                  <a href=\"#{wall_url(@wall)}\">#{@post.wall.title}</a>:<br /><br />
+                  #{@post.body}
+                  <br /><br />
+                  - #{@post.signature}
+                  <br /><br />
+                  <a href=\"#{unsuburl}\">Stop emailing me about this!</a>
+                  </span>
+                  ")
+          end
+        end
+            
         format.html { redirect_to show_by_code_url(@post.wall.code), 
                       notice: 'Your comment has been posted to the wall!' }
         format.json { render json: @post, status: :created, location: @post }

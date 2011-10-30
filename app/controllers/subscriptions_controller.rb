@@ -48,19 +48,6 @@ class SubscriptionsController < ApplicationController
     respond_to do |format|
       if @subscription.save
 
-        Pony.options = {
-          :via => :smtp,
-          :via_options => {
-            :address => 'smtp.sendgrid.net',
-            :port => '587',
-            :domain => 'heroku.com',
-            :user_name => ENV['SENDGRID_USERNAME'],
-            :password => ENV['SENDGRID_PASSWORD'],
-            :authentication => :plain,
-            :enable_starttls_auto => true
-          }
-        }
-
         confirm_url = confirm_subscription_url(:id => @subscription.id, :secret => @subscription.secret)
         Pony.mail(:from => "noreply@qrum.se",
                   :to => @subscription.email,
@@ -105,12 +92,29 @@ class SubscriptionsController < ApplicationController
     end
   end
 
+  def unsubscribe
+    @subscription = Subscription.find params[:id]
+    if params[:secret] == @subscription.secret
+      @subscription.destroy
+    end
+  end
+
+  def unsubscribe_all
+    subs = Subscription.where :email => params[:email]
+    logger.info "email"+ params[:email]
+    if subs.length > 0
+      subs.each do |s|
+        s.destroy
+      end
+    end
+  end
+
   # DELETE /subscriptions/1
   # DELETE /subscriptions/1.json
   def destroy
     @subscription = Subscription.find(params[:id])
     @subscription.destroy
-
+   
     respond_to do |format|
       format.html { redirect_to subscriptions_url }
       format.json { head :ok }

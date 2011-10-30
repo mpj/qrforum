@@ -1,0 +1,2 @@
+<h1>Unsubscribed from <%= @subscription.wall.title %></h1>
+If that is NOT enough, and you want unsubscribe <b><%= @subscription.email %></b> from ALL QRum subscriptions, <a href="<%= unsubscribe_all_path(URI::escape(CGI::escape(@subscription.email), '.')) %>">click here</a>.

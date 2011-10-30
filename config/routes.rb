@@ -8,6 +8,9 @@ Qrforum::Application.routes.draw do
   match '/w/:code' => 'walls#show_by_code', :as => :show_by_code
   match '/qr/:code' => 'walls#qr_code', :as => :wall_qr
   match '/c/:id/:secret' => 'subscriptions#confirm', :as => :confirm_subscription
+  match '/unsubscribe/:email' => 'subscriptions#unsubscribe_all', :constraints  => { :email => /[0-z%\.]+/ }, :as => :unsubscribe_all
+  match '/unsubscribe/:id/:secret' => 'subscriptions#unsubscribe', :as => :unsubscribe
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
