@@ -3,15 +3,17 @@
 $(".field.title textarea").select().focus();
 
 $(document).ready(function() {
-	var ua = navigator.userAgent.toLowerCase();
-	var isIOs = ((ua.match(/iphone/i)) || 
-				 (ua.navigator.userAgent.match(/ipod/i)));
-	var isAndroid = ua.match(/android/);
+	if (navigator && navigator.userAgent) {
+		var ua = navigator.userAgent.toLowerCase();
+		var isIOs = ((ua.match(/iphone/i)) || 
+					 (ua.match(/ipod/i)));
+		var isAndroid = ua.match(/android/);
 
-	if (isAndroid)
-		$("#bookmark_bar #arrow").addClass('android');
-	if (isIOs)
-		$("#bookmark_bar #arrow").addClass('ios');
+		if (isAndroid)
+			$("#bookmark_bar #arrow").addClass('android');
+		if (isIOs)
+			$("#bookmark_bar #arrow").addClass('ios');
+	}
 
 	$(".field.signature input").val(getCookie('qrum_signature'));
 
