@@ -49,7 +49,7 @@ class PostsController < ApplicationController
         @post.wall.subscriptions.each do |sub|
           if sub.confirmed
             unsuburl = unsubscribe_url(sub.id, sub.secret)
-            Pony.mail(:from => "QRum Robot <noreply@qrum.se>",
+            Pony.mail(:from => "QRum Robot <robot@qrum.se>",
                   :to => sub.email,
                   :subject =>  "New comment on " + wall.title,
                   :html_body => "<span style=\"font-family: sans-serif\">
@@ -66,7 +66,9 @@ class PostsController < ApplicationController
         end
             
         format.html { redirect_to show_by_code_url(@post.wall.code), 
-                      notice: 'Your comment has been posted to the wall!' }
+                      notice: "Your comment has been posted to the wall. 
+                      Don't forget to press the subscribe button below so that 
+                      you'll know when someone responds!" }
         format.json { render json: @post, status: :created, location: @post }
       else
         format.html { render action: "new" }
