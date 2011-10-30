@@ -53,7 +53,7 @@ class SubscriptionsController < ApplicationController
                   :to => @subscription.email,
                   :subject =>  "Confirm subscription: " + @subscription.wall.title,
                   :html_body => "<span style=\"font-family: sans-serif\"><h1>One step left!</h1>
-                  <a href=\"#{confirm_url}\"Click here to confirm</a> that you really want 
+                  <a href=\"#{confirm_url}\">Click here to confirm</a> that you really want 
                   to <br />receive updates to <b>#{@subscription.wall.title}.<br /><br />
                   - The little QRum robot
                   </span>
