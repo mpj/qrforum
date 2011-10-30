@@ -74,7 +74,7 @@ class SubscriptionsController < ApplicationController
       @subscription.confirmed = true
       @subscription.save
       redirect_to wall_qr_url(@subscription.wall, 
-                              :notice => 'Confirmed! You will now get email updates when comments are posted on this QRum.')
+                              notice: 'Confirmed! You will now get email updates when comments are posted on this QRum.')
     else
       render :status => :forbidden
     end
