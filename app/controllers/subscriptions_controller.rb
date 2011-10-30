@@ -42,7 +42,7 @@ class SubscriptionsController < ApplicationController
   def create
     @subscription = Subscription.new
     @subscription.email = params[:email]
-    @subscription.wall_id = params[:wall_id]
+    @subscription.wall = Wall.find_by_id params[:id]
     @subscription.secret = SecureRandom.hex(8).force_encoding('UTF-8')[0,8]
 
     respond_to do |format|
