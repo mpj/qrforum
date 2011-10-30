@@ -45,12 +45,13 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
+        wall = Wall.find params[:wall_id]
         @post.wall.subscriptions.each do |sub|
           if sub.confirmed
             unsuburl = unsubscribe_url(sub.id, sub.secret)
             Pony.mail(:from => "noreply@qrum.se",
                   :to => sub.email,
-                  :subject =>  "New comment: " + @subscription.wall.title,
+                  :subject =>  "New comment: " + wall.title,
                   :html_body => "<span style=\"font-family: sans-serif\">
                   New comment on QRum: 
                   <a href=\"#{wall_url(@wall)}\">#{@post.wall.title}</a>:<br /><br />
