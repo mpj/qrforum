@@ -111,7 +111,7 @@ input[type=text] {
 }
 
 #posts {
-	margin-top: 60px;
+	margin-top: 20px;
 	background-image: url('/assets/box_middle.png');
 	background-repeat: repeat-y;
 	background-position: -1px;
@@ -139,4 +139,12 @@ input[type=text] {
 	position: relative;
 	left: -11px;
 
+}
+#bookmark_bar #arrow { font-weight: bold; font-size: 18px; }
+#bookmark_bar #arrow.ios {
+	text-align: center;
+}
+#bookmark_bar #arrow.android {
+	text-align: right;
+	padding-right: 25px;
 }

@@ -13,8 +13,14 @@ $("form.new_post").submit(function(event) {
 $(".field.title textarea").select().focus();
 
 $(document).ready(function() {
-	var isIOs = ((navigator.userAgent.match(/iPhone/i)) || 
-				 (navigator.userAgent.match(/iPod/i)));
-	
+	var ua = navigator.userAgent.toLowerCase();
+	var isIOs = ((ua.match(/iphone/i)) || 
+				 (ua.navigator.userAgent.match(/ipod/i)));
+	var isAndroid = ua.match(/android/);
+
+	if (isAndroid)
+		$("#bookmark_bar #arrow").addClass('android');
+	if (isIOs)
+		$("#bookmark_bar #arrow").addClass('ios');
    	
 });
