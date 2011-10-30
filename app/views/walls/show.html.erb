@@ -13,6 +13,9 @@
     :style => 'position: relative; left: -1px; top: 5px') %>
 </div>
 
+<button id="follow_button" class="dribbble smaller" 
+        data-url="<%= subscriptions_path %>"
+        data-id="<%= @wall.id %>">Subscribe via email</button>
 
 
 <div id="posts">

@@ -29,6 +29,14 @@ $(document).ready(function() {
 		}
 		setCookie('qrum_signature', sig, 120);
 	});
+
+	$("#follow_button").click(function(){
+		var email = prompt("Enter your e-mail, and get new comments to your inbox:");
+		if (email) {
+			$.post($(this).attr('data-url'), { email: email, id: $(this).attr('data-id') });
+			alert("Almost done! We have sent instructions on how to complete your subscription to " + email + ".");
+		}
+	});
 });
 
 

@@ -1,10 +1,13 @@
 Qrforum::Application.routes.draw do
+  resources :subscriptions
+
   resources :posts
 
   resources :walls
 
   match '/w/:code' => 'walls#show_by_code', :as => :show_by_code
   match '/qr/:code' => 'walls#qr_code', :as => :wall_qr
+  match '/c/:id/:secret' => 'subscriptions#confirm', :as => :confirm_subscription
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

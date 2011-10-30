@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111028205651) do
+ActiveRecord::Schema.define(:version => 20111030174400) do
 
   create_table "posts", :force => true do |t|
     t.string   "body"
@@ -19,6 +19,15 @@ ActiveRecord::Schema.define(:version => 20111028205651) do
     t.integer  "wall_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "subscriptions", :force => true do |t|
+    t.string   "email"
+    t.boolean  "confirmed"
+    t.string   "secret"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "wall_id"
   end
 
   create_table "walls", :force => true do |t|

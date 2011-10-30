@@ -113,6 +113,11 @@ button.dribbble {
     background-image: -o-linear-gradient(top, #c94477 0, #c94477 50%, #c22b65 50%, #c22b65 100%);
     background-image: linear-gradient(top, #c94477 0, #c94477 50%, #c22b65 50%, #c22b65 100%); }
 
+button.smaller {
+	margin-top: 10px;
+	width: 70%;
+}
+
 #start_button {
 	margin-bottom: 25px;
 }
