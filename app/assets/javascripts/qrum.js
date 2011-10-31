@@ -32,13 +32,24 @@ $(document).ready(function() {
 
 	$("#follow_button").click(function(){
 		var email = prompt("Enter your e-mail, and get new comments to your inbox:");
-		if (email) {
+		if (!validateEmail(email)) {
+			alert("That doesn't look like an email address!");
+		} else if (email) {
 			$.post($(this).attr('data-url'), { email: email, id: $(this).attr('data-id') });
+			
+			var parts = $("#subscribers_count").text().trim().split(' ');
+			var subscribers = parseInt(parts[0]);
+			subscribers = subscribers + 1;
+			$("#subscribers_count").text(subscribers.toString() + " " + parts[1]);
+
 			alert("Almost done! We have sent instructions on how to complete your subscription to " + email + ".");
 		}
+
+		
 	});
 
-	$(".field.title").limitMaxlength();
+	if ($(".field.title").length > 0)
+		$(".field.title").limitMaxlength();
 });
 
 
@@ -63,6 +74,11 @@ function getCookie(c_name)
     }
   }
 }
+
+function validateEmail(email) { 
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+} 
 
 jQuery.fn.limitMaxlength = function(options){
 

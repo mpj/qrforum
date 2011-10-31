@@ -7,7 +7,13 @@
 <div id="heading_box">
   <%= image_tag("box_top.png", :style => 'position: relative; left: -1px;width:100%') %>
   
-  <h1 class="formheader"><%= @wall.title %></h1>
+  <h1 class="formheader"><%= @wall.title %></h1><br />
+  <span class="stats"> 
+    <%= pluralize @wall.views, 'scans' %> |
+    <span id="subscribers_count">
+      <%= pluralize @wall.subscriptions_count, 'subscribers' %>
+    </span>
+  </span>
 
   <%= image_tag("box_bottom.png", 
     :style => 'position: relative; left: -1px; top: 5px') %>
