@@ -16,14 +16,15 @@ class WallsController < ApplicationController
     
     @wall = Wall.find_by_code(params[:code])
 
-    if not session[:visitor_counted]
+    sess_key = 'visitor_counted_for_' + @wall.id.to_s
+    if not session[sess_key]
       if @wall.views 
         @wall.views = @wall.views + 1
       else
         @wall.views = 1
       end
       @wall.save
-      session[:visitor_counted] = true
+      session[sess_key] = true
     end
 
     @latest_posts = Post.where(:wall_id => @wall.id)
